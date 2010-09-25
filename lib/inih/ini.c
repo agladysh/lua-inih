@@ -34,12 +34,25 @@ static char* lskip(const char* s)
     return (char*)s;
 }
 
+static char* find_comment(const char* s)
+{
+    int was_whitespace = 1; /* Start of the line counts as whitespace */
+    while (*s && !(was_whitespace && *s == ';')) {
+        was_whitespace = isspace(*s);
+        s++;
+    }
+    return (char*)s;
+}
+
 /* Return pointer to first char c or ';' in given string, or pointer to
    null at end of string if neither found. */
 static char* find_char_or_comment(const char* s, char c)
 {
-    while (*s && *s != c && *s != ';')
+    int was_whitespace = 1; /* Start of the line counts as whitespace */
+    while (*s && *s != c && !(was_whitespace && *s == ';')) {
+        was_whitespace = isspace(*s);
         s++;
+    }
     return (char*)s;
 }
 
@@ -87,7 +100,10 @@ int ini_parse(const char* filename,
         }
         else
 #endif
-        if (*start == '[') {
+        if (*start == '#') {
+          /* A comment line, do nothing */
+        }
+        else if (*start == '[') {
             /* A "[section]" line */
             end = find_char_or_comment(start + 1, ']');
             if (*end == ']') {
@@ -107,7 +123,7 @@ int ini_parse(const char* filename,
                 *end = '\0';
                 name = rstrip(start);
                 value = lskip(end + 1);
-                end = find_char_or_comment(value, ';');
+                end = find_comment(value);
                 if (*end == ';')
                     *end = '\0';
                 rstrip(value);
