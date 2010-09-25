@@ -1,7 +1,8 @@
 package = "lua-inih"
 version = "0.1-1"
 source = {
-   url = "git://github.com/agladysh/lua-inih.git"
+   url = "git://github.com/agladysh/lua-inih.git",
+   branch = "v0.1"
 }
 description = {
    summary = "Bindings for inih, simple .INI file parser",
