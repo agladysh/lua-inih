@@ -1,9 +1,15 @@
 lua-inih — bindings for inih, simple .INI file parser
 =====================================================
 
+See the copyright information in the file named `COPYRIGHT`.
+
 More on inih: http://code.google.com/p/inih/
 
-See the copyright information in the file named `COPYRIGHT`.
+Note
+----
+
+Consider storing your data in .lua files.
+Use lua-inih to convert your legacy .INI data to .lua.
 
 Functions
 ---------
