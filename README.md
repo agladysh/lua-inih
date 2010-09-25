@@ -5,8 +5,8 @@ More on inih: http://code.google.com/p/inih/
 
 See the copyright information in the file named `COPYRIGHT`.
 
-Methods
--------
+Functions
+---------
 
 ### inih.parse
 
