@@ -1,0 +1,7 @@
+lua-inih Lua binding authors:
+-----------------------------
+
+Alexander Gladysh <agladysh@gmail.com>
+
+This Lua module distribution contains code of the inih library
+by Brush Technology: http://code.google.com/p/inih/
