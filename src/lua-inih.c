@@ -4,7 +4,7 @@
 
 #define LUAINIH_VERSION     "lua-inih 0.1"
 #define LUAINIH_COPYRIGHT   "Copyright (C) 2010, lua-inih authors"
-#define LUAINIH_DESCRIPTION "Bindings for inih r7, simple .INI file parser"
+#define LUAINIH_DESCRIPTION "Bindings for inih r7 (patched), simple .INI file parser"
 
 #if defined (__cplusplus) && !defined (LUABINS_LUABUILTASCPP)
 extern "C" {
