@@ -38,7 +38,7 @@ Example:
     local data = { }
 
     assert(inih.parse('myfile.ini', function(section, name, value)
-      data[section] = result[section] or { }
+      data[section] = data[section] or { }
       data[section][name] = value
 
       return true -- continue parsing
