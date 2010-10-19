@@ -6,14 +6,14 @@
 #define LUAINIH_COPYRIGHT   "Copyright (C) 2010, lua-inih authors"
 #define LUAINIH_DESCRIPTION "Bindings for inih r7 (patched), simple .INI file parser"
 
-#if defined (__cplusplus) && !defined (LUABINS_LUABUILTASCPP)
+#if defined (__cplusplus)
 extern "C" {
 #endif
 
 #include <lua.h>
 #include <lauxlib.h>
 
-#if defined (__cplusplus) && !defined (LUABINS_LUABUILTASCPP)
+#if defined (__cplusplus)
 }
 #endif
 
@@ -150,7 +150,7 @@ static int l_parse(lua_State * L)
   return 1;
 }
 
-/* luabins Lua module API */
+/* Lua module API */
 static const struct luaL_reg R[] =
 {
   { "parse", l_parse },
